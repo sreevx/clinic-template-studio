@@ -117,7 +117,7 @@ function App() {
         </nav>
       </header>
 
-      <motion.section initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.3, ease: [0.22, 1, 0.36, 1] }} className="hero" id="home">
+      <motion.section initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 2, ease: [0.22, 1, 0.36, 1] }} className="hero" id="home">
         <div className="hero-content">
           <span className="eyebrow">
             <span className="eyebrow-dot" />
@@ -486,6 +486,7 @@ function App() {
 }
 
 export default App;
+
 
 
 
