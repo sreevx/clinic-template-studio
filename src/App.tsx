@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { useState, type FormEvent } from "react";
 import "./App.css";
+import { motion, MotionConfig } from "framer-motion";
 
 const doctors = [
   {
@@ -86,6 +87,7 @@ function App() {
   const closeMenu = () => setMenuOpen(false);
 
   return (
+    <MotionConfig reducedMotion="user">
     <main>
       <header className="navbar">
         <a href="#home" className="brand" onClick={closeMenu}>
@@ -115,7 +117,7 @@ function App() {
         </nav>
       </header>
 
-      <section className="hero" id="home">
+      <motion.section initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.3, ease: [0.22, 1, 0.36, 1] }} className="hero" id="home">
         <div className="hero-content">
           <span className="eyebrow">
             <span className="eyebrow-dot" />
@@ -171,16 +173,16 @@ function App() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="stats-strip">
+      <motion.section initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.18 }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}  className="stats-strip">
         <div><strong>12+</strong><span>Years of experience</span></div>
         <div><strong>5k+</strong><span>Smiles cared for</span></div>
         <div><strong>06</strong><span>Specialist treatments</span></div>
         <div><strong>4.9</strong><span>Patient satisfaction</span></div>
-      </section>
+      </motion.section>
 
-      <section className="intro-section section-pad" id="about">
+      <motion.section initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.18 }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}  className="intro-section section-pad" id="about">
         <div className="section-label">01 — OUR PHILOSOPHY</div>
         <div className="intro-content">
           <h2>
@@ -200,9 +202,9 @@ function App() {
             </a>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="treatments-section section-pad" id="treatments">
+      <motion.section initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.18 }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}  className="treatments-section section-pad" id="treatments">
         <div className="section-heading">
           <div>
             <div className="section-label">02 — WHAT WE DO</div>
@@ -229,9 +231,9 @@ function App() {
             </article>
           ))}
         </div>
-      </section>
+      </motion.section>
 
-      <section className="doctors-section section-pad" id="doctors">
+      <motion.section initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.18 }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}  className="doctors-section section-pad" id="doctors">
         <div className="section-heading">
           <div>
             <div className="section-label">03 — THE PEOPLE BEHIND YOUR SMILE</div>
@@ -260,9 +262,9 @@ function App() {
             </article>
           ))}
         </div>
-      </section>
+      </motion.section>
 
-      <section className="experience-section">
+      <motion.section initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.18 }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}  className="experience-section">
         <div className="experience-image">
           <img
             src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=1200&q=85"
@@ -292,9 +294,9 @@ function App() {
             Begin Your Journey <ArrowUpRight size={17} />
           </a>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="reviews-section section-pad" id="reviews">
+      <motion.section initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.18 }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}  className="reviews-section section-pad" id="reviews">
         <div className="section-label">05 — KIND WORDS</div>
         <h2>Experiences worth <em>sharing.</em></h2>
         <div className="review-grid">
@@ -313,9 +315,9 @@ function App() {
             </article>
           ))}
         </div>
-      </section>
+      </motion.section>
 
-      <section className="appointment-section section-pad" id="contact">
+      <motion.section initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.18 }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}  className="appointment-section section-pad" id="contact">
         <div className="appointment-info">
           <div className="section-label">06 — YOUR NEXT CHAPTER</div>
           <h2>
@@ -422,9 +424,9 @@ function App() {
             </form>
           )}
         </div>
-      </section>
+      </motion.section>
 
-      <section className="location-section section-pad">
+      <motion.section initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.18 }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}  className="location-section section-pad">
         <div className="section-heading">
           <div>
             <div className="section-label">07 — FIND US</div>
@@ -447,7 +449,7 @@ function App() {
             referrerPolicy="no-referrer-when-downgrade"
           />
         </div>
-      </section>
+      </motion.section>
 
       <footer className="footer">
         <div className="footer-main">
@@ -478,8 +480,14 @@ function App() {
       >
         <Phone size={21} />
       </a>
-    </main>
+        </main>
+  </MotionConfig>
   );
 }
 
 export default App;
+
+
+
+
+
